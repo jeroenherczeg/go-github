@@ -94,11 +94,11 @@ type Match struct {
 
 // TextMatch represents a text match for a SearchResult
 type TextMatch struct {
-	ObjectURL  *string `json:"object_url,omitempty"`
-	ObjectType *string `json:"object_type,omitempty"`
-	Property   *string `json:"property,omitempty"`
-	Fragment   *string `json:"fragment,omitempty"`
-	Matches    []Match `json:"matches,omitempty"`
+	ObjectURL  *string `json:"object_url,omitempty" bson:",omitempty"`
+	ObjectType *string `json:"object_type,omitempty" bson:",omitempty"`
+	Property   *string `json:"property,omitempty" bson:",omitempty"`
+	Fragment   *string `json:"fragment,omitempty" bson:",omitempty"`
+	Matches    []Match `json:"matches,omitempty" bson:",omitempty"`
 }
 
 func (tm TextMatch) String() string {

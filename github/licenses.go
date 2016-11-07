@@ -15,19 +15,19 @@ type LicensesService service
 
 // License represents an open source license.
 type License struct {
-	Key  *string `json:"key,omitempty"`
-	Name *string `json:"name,omitempty"`
-	URL  *string `json:"url,omitempty"`
+	Key  *string `json:"key,omitempty" bson:",omitempty"`
+	Name *string `json:"name,omitempty" bson:",omitempty"`
+	URL  *string `json:"url,omitempty" bson:",omitempty"`
 
-	HTMLURL        *string   `json:"html_url,omitempty"`
-	Featured       *bool     `json:"featured,omitempty"`
-	Description    *string   `json:"description,omitempty"`
-	Category       *string   `json:"category,omitempty"`
-	Implementation *string   `json:"implementation,omitempty"`
-	Required       *[]string `json:"required,omitempty"`
-	Permitted      *[]string `json:"permitted,omitempty"`
-	Forbidden      *[]string `json:"forbidden,omitempty"`
-	Body           *string   `json:"body,omitempty"`
+	HTMLURL        *string   `json:"html_url,omitempty" bson:",omitempty"`
+	Featured       *bool     `json:"featured,omitempty" bson:",omitempty"`
+	Description    *string   `json:"description,omitempty" bson:",omitempty"`
+	Category       *string   `json:"category,omitempty" bson:",omitempty"`
+	Implementation *string   `json:"implementation,omitempty" bson:",omitempty"`
+	Required       *[]string `json:"required,omitempty" bson:",omitempty"`
+	Permitted      *[]string `json:"permitted,omitempty" bson:",omitempty"`
+	Forbidden      *[]string `json:"forbidden,omitempty" bson:",omitempty"`
+	Body           *string   `json:"body,omitempty" bson:",omitempty"`
 }
 
 func (l License) String() string {

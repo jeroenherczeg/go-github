@@ -15,95 +15,95 @@ type RepositoriesService service
 
 // Repository represents a GitHub repository.
 type Repository struct {
-	ID               *int             `json:"id,omitempty"`
-	Owner            *User            `json:"owner,omitempty"`
-	Name             *string          `json:"name,omitempty"`
-	FullName         *string          `json:"full_name,omitempty"`
-	Description      *string          `json:"description,omitempty"`
-	Homepage         *string          `json:"homepage,omitempty"`
-	DefaultBranch    *string          `json:"default_branch,omitempty"`
-	MasterBranch     *string          `json:"master_branch,omitempty"`
-	CreatedAt        *Timestamp       `json:"created_at,omitempty"`
-	PushedAt         *Timestamp       `json:"pushed_at,omitempty"`
-	UpdatedAt        *Timestamp       `json:"updated_at,omitempty"`
-	HTMLURL          *string          `json:"html_url,omitempty"`
-	CloneURL         *string          `json:"clone_url,omitempty"`
-	GitURL           *string          `json:"git_url,omitempty"`
-	MirrorURL        *string          `json:"mirror_url,omitempty"`
-	SSHURL           *string          `json:"ssh_url,omitempty"`
-	SVNURL           *string          `json:"svn_url,omitempty"`
-	Language         *string          `json:"language,omitempty"`
-	Fork             *bool            `json:"fork"`
-	ForksCount       *int             `json:"forks_count,omitempty"`
-	NetworkCount     *int             `json:"network_count,omitempty"`
-	OpenIssuesCount  *int             `json:"open_issues_count,omitempty"`
-	StargazersCount  *int             `json:"stargazers_count,omitempty"`
-	SubscribersCount *int             `json:"subscribers_count,omitempty"`
-	WatchersCount    *int             `json:"watchers_count,omitempty"`
-	Size             *int             `json:"size,omitempty"`
-	AutoInit         *bool            `json:"auto_init,omitempty"`
-	Parent           *Repository      `json:"parent,omitempty"`
-	Source           *Repository      `json:"source,omitempty"`
-	Organization     *Organization    `json:"organization,omitempty"`
-	Permissions      *map[string]bool `json:"permissions,omitempty"`
+	ID               *int             `json:"id,omitempty" bson:",omitempty"`
+	Owner            *User            `json:"owner,omitempty" bson:",omitempty"`
+	Name             *string          `json:"name,omitempty" bson:",omitempty"`
+	FullName         *string          `json:"full_name,omitempty" bson:",omitempty"`
+	Description      *string          `json:"description,omitempty" bson:",omitempty"`
+	Homepage         *string          `json:"homepage,omitempty" bson:",omitempty"`
+	DefaultBranch    *string          `json:"default_branch,omitempty" bson:",omitempty"`
+	MasterBranch     *string          `json:"master_branch,omitempty" bson:",omitempty"`
+	CreatedAt        *Timestamp       `json:"created_at,omitempty" bson:",omitempty"`
+	PushedAt         *Timestamp       `json:"pushed_at,omitempty" bson:",omitempty"`
+	UpdatedAt        *Timestamp       `json:"updated_at,omitempty" bson:",omitempty"`
+	HTMLURL          *string          `json:"html_url,omitempty" bson:",omitempty"`
+	CloneURL         *string          `json:"clone_url,omitempty" bson:",omitempty"`
+	GitURL           *string          `json:"git_url,omitempty" bson:",omitempty"`
+	MirrorURL        *string          `json:"mirror_url,omitempty" bson:",omitempty"`
+	SSHURL           *string          `json:"ssh_url,omitempty" bson:",omitempty"`
+	SVNURL           *string          `json:"svn_url,omitempty" bson:",omitempty"`
+	Language         *string          `json:"language,omitempty" bson:",omitempty"`
+	Fork             *bool            `json:"fork" bson:",omitempty"`
+	ForksCount       *int             `json:"forks_count,omitempty" bson:",omitempty"`
+	NetworkCount     *int             `json:"network_count,omitempty" bson:",omitempty"`
+	OpenIssuesCount  *int             `json:"open_issues_count,omitempty" bson:",omitempty"`
+	StargazersCount  *int             `json:"stargazers_count,omitempty" bson:",omitempty"`
+	SubscribersCount *int             `json:"subscribers_count,omitempty" bson:",omitempty"`
+	WatchersCount    *int             `json:"watchers_count,omitempty" bson:",omitempty"`
+	Size             *int             `json:"size,omitempty" bson:",omitempty"`
+	AutoInit         *bool            `json:"auto_init,omitempty" bson:",omitempty"`
+	Parent           *Repository      `json:"parent,omitempty" bson:",omitempty"`
+	Source           *Repository      `json:"source,omitempty" bson:",omitempty"`
+	Organization     *Organization    `json:"organization,omitempty" bson:",omitempty"`
+	Permissions      *map[string]bool `json:"permissions,omitempty" bson:",omitempty"`
 
 	// Only provided when using RepositoriesService.Get while in preview
-	License *License `json:"license,omitempty"`
+	License *License `json:"license,omitempty" bson:",omitempty"`
 
 	// Additional mutable fields when creating and editing a repository
-	Private           *bool   `json:"private"`
-	HasIssues         *bool   `json:"has_issues"`
-	HasWiki           *bool   `json:"has_wiki"`
-	HasPages          *bool   `json:"has_pages"`
-	HasDownloads      *bool   `json:"has_downloads"`
-	LicenseTemplate   *string `json:"license_template,omitempty"`
-	GitignoreTemplate *string `json:"gitignore_template,omitempty"`
+	Private           *bool   `json:"private" bson:",omitempty"`
+	HasIssues         *bool   `json:"has_issues" bson:",omitempty"`
+	HasWiki           *bool   `json:"has_wiki" bson:",omitempty"`
+	HasPages          *bool   `json:"has_pages" bson:",omitempty"`
+	HasDownloads      *bool   `json:"has_downloads" bson:",omitempty"`
+	LicenseTemplate   *string `json:"license_template,omitempty" bson:",omitempty"`
+	GitignoreTemplate *string `json:"gitignore_template,omitempty" bson:",omitempty"`
 
 	// Creating an organization repository. Required for non-owners.
-	TeamID *int `json:"team_id"`
+	TeamID *int `json:"team_id" bson:",omitempty"`
 
 	// API URLs
-	URL              *string `json:"url,omitempty"`
-	ArchiveURL       *string `json:"archive_url,omitempty"`
-	AssigneesURL     *string `json:"assignees_url,omitempty"`
-	BlobsURL         *string `json:"blobs_url,omitempty"`
-	BranchesURL      *string `json:"branches_url,omitempty"`
-	CollaboratorsURL *string `json:"collaborators_url,omitempty"`
-	CommentsURL      *string `json:"comments_url,omitempty"`
-	CommitsURL       *string `json:"commits_url,omitempty"`
-	CompareURL       *string `json:"compare_url,omitempty"`
-	ContentsURL      *string `json:"contents_url,omitempty"`
-	ContributorsURL  *string `json:"contributors_url,omitempty"`
-	DeploymentsURL   *string `json:"deployments_url,omitempty"`
-	DownloadsURL     *string `json:"downloads_url,omitempty"`
-	EventsURL        *string `json:"events_url,omitempty"`
-	ForksURL         *string `json:"forks_url,omitempty"`
-	GitCommitsURL    *string `json:"git_commits_url,omitempty"`
-	GitRefsURL       *string `json:"git_refs_url,omitempty"`
-	GitTagsURL       *string `json:"git_tags_url,omitempty"`
-	HooksURL         *string `json:"hooks_url,omitempty"`
-	IssueCommentURL  *string `json:"issue_comment_url,omitempty"`
-	IssueEventsURL   *string `json:"issue_events_url,omitempty"`
-	IssuesURL        *string `json:"issues_url,omitempty"`
-	KeysURL          *string `json:"keys_url,omitempty"`
-	LabelsURL        *string `json:"labels_url,omitempty"`
-	LanguagesURL     *string `json:"languages_url,omitempty"`
-	MergesURL        *string `json:"merges_url,omitempty"`
-	MilestonesURL    *string `json:"milestones_url,omitempty"`
-	NotificationsURL *string `json:"notifications_url,omitempty"`
-	PullsURL         *string `json:"pulls_url,omitempty"`
-	ReleasesURL      *string `json:"releases_url,omitempty"`
-	StargazersURL    *string `json:"stargazers_url,omitempty"`
-	StatusesURL      *string `json:"statuses_url,omitempty"`
-	SubscribersURL   *string `json:"subscribers_url,omitempty"`
-	SubscriptionURL  *string `json:"subscription_url,omitempty"`
-	TagsURL          *string `json:"tags_url,omitempty"`
-	TreesURL         *string `json:"trees_url,omitempty"`
-	TeamsURL         *string `json:"teams_url,omitempty"`
+	URL              *string `json:"url,omitempty" bson:"-"`
+	ArchiveURL       *string `json:"archive_url,omitempty" bson:"-"`
+	AssigneesURL     *string `json:"assignees_url,omitempty" bson:"-"`
+	BlobsURL         *string `json:"blobs_url,omitempty" bson:"-"`
+	BranchesURL      *string `json:"branches_url,omitempty" bson:"-"`
+	CollaboratorsURL *string `json:"collaborators_url,omitempty" bson:"-"`
+	CommentsURL      *string `json:"comments_url,omitempty" bson:"-"`
+	CommitsURL       *string `json:"commits_url,omitempty" bson:"-"`
+	CompareURL       *string `json:"compare_url,omitempty" bson:"-"`
+	ContentsURL      *string `json:"contents_url,omitempty" bson:"-"`
+	ContributorsURL  *string `json:"contributors_url,omitempty" bson:"-"`
+	DeploymentsURL   *string `json:"deployments_url,omitempty" bson:"-"`
+	DownloadsURL     *string `json:"downloads_url,omitempty" bson:"-"`
+	EventsURL        *string `json:"events_url,omitempty" bson:"-"`
+	ForksURL         *string `json:"forks_url,omitempty" bson:"-"`
+	GitCommitsURL    *string `json:"git_commits_url,omitempty" bson:"-"`
+	GitRefsURL       *string `json:"git_refs_url,omitempty" bson:"-"`
+	GitTagsURL       *string `json:"git_tags_url,omitempty" bson:"-"`
+	HooksURL         *string `json:"hooks_url,omitempty" bson:"-"`
+	IssueCommentURL  *string `json:"issue_comment_url,omitempty" bson:"-"`
+	IssueEventsURL   *string `json:"issue_events_url,omitempty" bson:"-"`
+	IssuesURL        *string `json:"issues_url,omitempty" bson:"-"`
+	KeysURL          *string `json:"keys_url,omitempty" bson:"-"`
+	LabelsURL        *string `json:"labels_url,omitempty" bson:"-"`
+	LanguagesURL     *string `json:"languages_url,omitempty" bson:"-"`
+	MergesURL        *string `json:"merges_url,omitempty" bson:"-"`
+	MilestonesURL    *string `json:"milestones_url,omitempty" bson:"-"`
+	NotificationsURL *string `json:"notifications_url,omitempty" bson:"-"`
+	PullsURL         *string `json:"pulls_url,omitempty" bson:"-"`
+	ReleasesURL      *string `json:"releases_url,omitempty" bson:"-"`
+	StargazersURL    *string `json:"stargazers_url,omitempty" bson:"-"`
+	StatusesURL      *string `json:"statuses_url,omitempty" bson:"-"`
+	SubscribersURL   *string `json:"subscribers_url,omitempty" bson:"-"`
+	SubscriptionURL  *string `json:"subscription_url,omitempty" bson:"-"`
+	TagsURL          *string `json:"tags_url,omitempty" bson:"-"`
+	TreesURL         *string `json:"trees_url,omitempty" bson:"-"`
+	TeamsURL         *string `json:"teams_url,omitempty" bson:"-"`
 
 	// TextMatches is only populated from search results that request text matches
 	// See: search.go and https://developer.github.com/v3/search/#text-match-metadata
-	TextMatches []TextMatch `json:"text_matches,omitempty"`
+	TextMatches []TextMatch `json:"text_matches,omitempty" bson:",omitempty"`
 }
 
 func (r Repository) String() string {

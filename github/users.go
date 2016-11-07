@@ -15,53 +15,53 @@ type UsersService service
 
 // User represents a GitHub user.
 type User struct {
-	Login             *string    `json:"login,omitempty"`
-	ID                *int       `json:"id,omitempty"`
-	AvatarURL         *string    `json:"avatar_url,omitempty"`
-	HTMLURL           *string    `json:"html_url,omitempty"`
-	GravatarID        *string    `json:"gravatar_id,omitempty"`
-	Name              *string    `json:"name,omitempty"`
-	Company           *string    `json:"company,omitempty"`
-	Blog              *string    `json:"blog,omitempty"`
-	Location          *string    `json:"location,omitempty"`
-	Email             *string    `json:"email,omitempty"`
-	Hireable          *bool      `json:"hireable,omitempty"`
-	Bio               *string    `json:"bio,omitempty"`
-	PublicRepos       *int       `json:"public_repos,omitempty"`
-	PublicGists       *int       `json:"public_gists,omitempty"`
-	Followers         *int       `json:"followers,omitempty"`
-	Following         *int       `json:"following,omitempty"`
-	CreatedAt         *Timestamp `json:"created_at,omitempty"`
-	UpdatedAt         *Timestamp `json:"updated_at,omitempty"`
-	SuspendedAt       *Timestamp `json:"suspended_at,omitempty"`
-	Type              *string    `json:"type,omitempty"`
-	SiteAdmin         *bool      `json:"site_admin,omitempty"`
-	TotalPrivateRepos *int       `json:"total_private_repos,omitempty"`
-	OwnedPrivateRepos *int       `json:"owned_private_repos,omitempty"`
-	PrivateGists      *int       `json:"private_gists,omitempty"`
-	DiskUsage         *int       `json:"disk_usage,omitempty"`
-	Collaborators     *int       `json:"collaborators,omitempty"`
-	Plan              *Plan      `json:"plan,omitempty"`
+	Login             *string    `json:"login,omitempty" bson:",omitempty"`
+	ID                *int       `json:"id,omitempty" bson:",omitempty"`
+	AvatarURL         *string    `json:"avatar_url,omitempty" bson:",omitempty"`
+	HTMLURL           *string    `json:"html_url,omitempty" bson:",omitempty"`
+	GravatarID        *string    `json:"gravatar_id,omitempty" bson:",omitempty"`
+	Name              *string    `json:"name,omitempty" bson:",omitempty"`
+	Company           *string    `json:"company,omitempty" bson:",omitempty"`
+	Blog              *string    `json:"blog,omitempty" bson:",omitempty"`
+	Location          *string    `json:"location,omitempty" bson:",omitempty"`
+	Email             *string    `json:"email,omitempty" bson:",omitempty"`
+	Hireable          *bool      `json:"hireable,omitempty" bson:",omitempty"`
+	Bio               *string    `json:"bio,omitempty" bson:",omitempty"`
+	PublicRepos       *int       `json:"public_repos,omitempty" bson:",omitempty"`
+	PublicGists       *int       `json:"public_gists,omitempty" bson:",omitempty"`
+	Followers         *int       `json:"followers,omitempty" bson:",omitempty"`
+	Following         *int       `json:"following,omitempty" bson:",omitempty"`
+	CreatedAt         *Timestamp `json:"created_at,omitempty" bson:",omitempty"`
+	UpdatedAt         *Timestamp `json:"updated_at,omitempty" bson:",omitempty"`
+	SuspendedAt       *Timestamp `json:"suspended_at,omitempty" bson:",omitempty"`
+	Type              *string    `json:"type,omitempty" bson:",omitempty"`
+	SiteAdmin         *bool      `json:"site_admin,omitempty" bson:",omitempty"`
+	TotalPrivateRepos *int       `json:"total_private_repos,omitempty" bson:",omitempty"`
+	OwnedPrivateRepos *int       `json:"owned_private_repos,omitempty" bson:",omitempty"`
+	PrivateGists      *int       `json:"private_gists,omitempty" bson:",omitempty"`
+	DiskUsage         *int       `json:"disk_usage,omitempty" bson:",omitempty"`
+	Collaborators     *int       `json:"collaborators,omitempty" bson:",omitempty"`
+	Plan              *Plan      `json:"plan,omitempty" bson:",omitempty"`
 
 	// API URLs
-	URL               *string `json:"url,omitempty"`
-	EventsURL         *string `json:"events_url,omitempty"`
-	FollowingURL      *string `json:"following_url,omitempty"`
-	FollowersURL      *string `json:"followers_url,omitempty"`
-	GistsURL          *string `json:"gists_url,omitempty"`
-	OrganizationsURL  *string `json:"organizations_url,omitempty"`
-	ReceivedEventsURL *string `json:"received_events_url,omitempty"`
-	ReposURL          *string `json:"repos_url,omitempty"`
-	StarredURL        *string `json:"starred_url,omitempty"`
-	SubscriptionsURL  *string `json:"subscriptions_url,omitempty"`
+	URL               *string `json:"url,omitempty" bson:"-"`
+	EventsURL         *string `json:"events_url,omitempty" bson:"-"`
+	FollowingURL      *string `json:"following_url,omitempty" bson:"-"`
+	FollowersURL      *string `json:"followers_url,omitempty" bson:"-"`
+	GistsURL          *string `json:"gists_url,omitempty" bson:"-"`
+	OrganizationsURL  *string `json:"organizations_url,omitempty" bson:"-"`
+	ReceivedEventsURL *string `json:"received_events_url,omitempty" bson:"-"`
+	ReposURL          *string `json:"repos_url,omitempty" bson:"-"`
+	StarredURL        *string `json:"starred_url,omitempty" bson:"-"`
+	SubscriptionsURL  *string `json:"subscriptions_url,omitempty" bson:"-"`
 
 	// TextMatches is only populated from search results that request text matches
 	// See: search.go and https://developer.github.com/v3/search/#text-match-metadata
-	TextMatches []TextMatch `json:"text_matches,omitempty"`
+	TextMatches []TextMatch `json:"text_matches,omitempty" bson:",omitempty"`
 
 	// Permissions identifies the permissions that a user has on a given
 	// repository. This is only populated when calling Repositories.ListCollaborators.
-	Permissions *map[string]bool `json:"permissions,omitempty"`
+	Permissions *map[string]bool `json:"permissions,omitempty" bson:",omitempty"`
 }
 
 func (u User) String() string {
