@@ -12,7 +12,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/google/go-github/github"
+	"github.com/src-d/go-github/github"
 )
 
 func TestRepositories_CRUD(t *testing.T) {

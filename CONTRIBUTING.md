@@ -71,7 +71,7 @@ defined at <https://developer.github.com/v3/repos/hooks/> live in
 [repos_hooks.go][].
 
 [GitHub API documentation]: http://developer.github.com/v3/
-[repos_hooks.go]: https://github.com/google/go-github/blob/master/github/repos_hooks.go
+[repos_hooks.go]: https://github.com/src-d/go-github/blob/master/github/repos_hooks.go
 
 
 ## Maintainer's Guide ##
@@ -105,5 +105,5 @@ If you made any other changes, it's worth noting that as well, [like
 this][modified-comment].
 
 [git-aliases]: https://github.com/willnorris/dotfiles/blob/d640d010c23b1116bdb3d4dc12088ed26120d87d/git/.gitconfig#L13-L15
-[rebase-comment]: https://github.com/google/go-github/pull/277#issuecomment-183035491
-[modified-comment]: https://github.com/google/go-github/pull/280#issuecomment-184859046
+[rebase-comment]: https://github.com/src-d/go-github/pull/277#issuecomment-183035491
+[modified-comment]: https://github.com/src-d/go-github/pull/280#issuecomment-184859046

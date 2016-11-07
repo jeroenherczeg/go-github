@@ -2,17 +2,17 @@
 
 go-github is a Go client library for accessing the [GitHub API][].
 
-**Documentation:** [![GoDoc](https://godoc.org/github.com/google/go-github/github?status.svg)](https://godoc.org/github.com/google/go-github/github)  
+**Documentation:** [![GoDoc](https://godoc.org/github.com/src-d/go-github/github?status.svg)](https://godoc.org/github.com/src-d/go-github/github)  
 **Mailing List:** [go-github@googlegroups.com](https://groups.google.com/group/go-github)  
 **Build Status:** [![Build Status](https://travis-ci.org/google/go-github.svg?branch=master)](https://travis-ci.org/google/go-github)  
-**Test Coverage:** [![Test Coverage](https://coveralls.io/repos/google/go-github/badge.svg?branch=master)](https://coveralls.io/r/google/go-github?branch=master) ([gocov report](https://drone.io/github.com/google/go-github/files/coverage.html))
+**Test Coverage:** [![Test Coverage](https://coveralls.io/repos/google/go-github/badge.svg?branch=master)](https://coveralls.io/r/google/go-github?branch=master) ([gocov report](https://drone.io/github.com/src-d/go-github/files/coverage.html))
 
 go-github requires Go version 1.4 or greater.
 
 ## Usage ##
 
 ```go
-import "github.com/google/go-github/github"
+import "github.com/src-d/go-github/github"
 ```
 
 Construct a new GitHub client, then use the various services on the client to
@@ -71,7 +71,7 @@ almost never be shared between different users.
 See the [oauth2 docs][] for complete instructions on using that library.
 
 For API methods that require HTTP Basic Authentication, use the
-[`BasicAuthTransport`](https://godoc.org/github.com/google/go-github/github#BasicAuthTransport).
+[`BasicAuthTransport`](https://godoc.org/github.com/src-d/go-github/github#BasicAuthTransport).
 
 ### Rate Limiting ###
 
@@ -164,7 +164,7 @@ For complete usage of go-github, see the full [package docs][].
 [oauth2]: https://github.com/golang/oauth2
 [oauth2 docs]: https://godoc.org/golang.org/x/oauth2
 [personal API token]: https://github.com/blog/1509-personal-api-tokens
-[package docs]: https://godoc.org/github.com/google/go-github/github
+[package docs]: https://godoc.org/github.com/src-d/go-github/github
 
 ### Integration Tests ###
 
